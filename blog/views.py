@@ -1,6 +1,14 @@
+
 from django.shortcuts import render
-from django.http import HttpResponse
+#from django.http import HttpResponse
 # Create your views here.
 def index(request):
     
-    return HttpResponse("<h1>le Blog</h1>")
+    return render(request, "blog/index.html")
+
+def article(request, article_id):
+    
+    if article_id in ['01', '02', '03']:
+        return render(request, f"blog/article_{article_id}.html")
+    else:
+        return render(request, "blog/article_not_found.html")

@@ -5,4 +5,4 @@ from django.shortcuts import render
 
 def index(request):
     
-    return render(request, 'prem.html', context={'date': datetime.today()})
+    return render(request, 'Docblog/index.html', context={'date': datetime.today()})
